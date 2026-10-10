@@ -1,0 +1,10 @@
+schema_version: 1
+seeds: [42, 2026, 7]
+native_learning_rates: [0.1, 0.5, 1.0]
+native_epochs: [25, 100, 200]
+native_word_ngrams: [1, 2]
+chronological_train_end: '19980121'
+chronological_validation_end: '19980126'
+bootstrap_replicates: 2000
+bootstrap_seed: 20261007
+label_permutation_seed: 12345

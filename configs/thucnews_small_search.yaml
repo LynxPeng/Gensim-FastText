@@ -1,0 +1,41 @@
+schema_version: 1
+source_manifest: data/thucnews/prepared/9cb3ecd006ae1a9a1f7f/manifest.json
+sample: {documents: 50000, seed: 42}
+benchmark_manifest: artifacts/thucnews_validation/benchmarks/c1943509f229e0645ba2/manifest.json
+benchmark_manifest_sha256: ff8f0f7464bba302b4e0a5ced9a8fa5c2180869f24897818f2cf4a8b4fe88b48
+split_seed: 42
+screen_seed: 42
+replicate_seeds: [2026, 7]
+models: [word2vec, fasttext]
+baseline: cbow_hs
+combinations:
+  - {name: cbow_hs, sg: 0, hs: 1, negative: 0}
+  - {name: cbow_ns5, sg: 0, hs: 0, negative: 5}
+  - {name: cbow_ns10, sg: 0, hs: 0, negative: 10}
+  - {name: sg_hs, sg: 1, hs: 1, negative: 0}
+  - {name: sg_ns5, sg: 1, hs: 0, negative: 5}
+  - {name: sg_ns10, sg: 1, hs: 0, negative: 10}
+embedding:
+  vector_size: 100
+  window: 5
+  min_count: 5
+  sample: 0.001
+  alpha: 0.025
+  min_alpha: 0.0001
+  workers: 20
+  batch_words: 9000
+  ns_exponent: 0.75
+  cbow_mean: 1
+  shrink_windows: true
+  sorted_vocab: 1
+fasttext: {min_n: 1, max_n: 3, bucket: 200000}
+learning_rates: [0.01, 0.025, 0.05]
+validation:
+  primary_benchmark: wordsim240
+  primary_metric: spearman_rho
+  min_epochs: 3
+  max_epochs: 15
+  patience: 3
+  min_delta: 0.001
+  minimum_primary_coverage: 0.8
+  continuation: recent_one_or_two_epoch_gain

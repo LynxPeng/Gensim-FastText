@@ -1,0 +1,3 @@
+training_threads: 20
+numerical_threads: 4
+preprocessing_workers: 8

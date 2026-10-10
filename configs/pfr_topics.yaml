@@ -1,0 +1,38 @@
+schema_version: 1
+months: ['199801', '199802', '199803']
+train_months: ['199801', '199802']
+holdout_month: '199803'
+validation_fraction: 0.3
+split_seed: 42
+min_tokens: 30
+simhash_distance: 3
+topics: ['政治', '财经', '科技', '体育', '娱乐', '社会', '军事', '国际']
+annotation:
+  base_url: https://api.deepseek.com
+  model: deepseek-flash
+  api_key_env: DEEPSEEK_API_KEY
+  concurrency: 20
+  batch_size: 4
+  max_tokens: 1024
+  retries: 2
+  budget_cny: 35.0
+  thinking: disabled
+  temperature: 0
+  pilot_articles: 100
+sources:
+  fasttext: artifacts/thucnews_validation/runs/31fd3e9423f08bd77a62e68d
+seeds: [42, 2026, 7]
+selection_metric: macro_f1
+native:
+  dim: 100
+  epochs: [5, 15, 25, 50, 100, 200]
+  lr: 0.1
+  minCount: 1
+  wordNgrams: 2
+  minn: 0
+  maxn: 0
+  loss: softmax
+  bucket: 200000
+bootstrap:
+  repetitions: 2000
+  seed: 20261010

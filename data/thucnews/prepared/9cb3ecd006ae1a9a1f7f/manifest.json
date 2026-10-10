@@ -1,0 +1,141 @@
+{
+  "prepared": "2026-10-09T14:19:04+08:00",
+  "spec": {
+    "archive_sha256": "8d6aef71c4431ba27c217a00adb2be7a78f8aa44f3c0bcb99d57a9026bcf163c",
+    "sample": {
+      "mode": "full",
+      "documents": null,
+      "seed": 42,
+      "holdout_documents": 5000,
+      "holdout_reference": "data/thucnews/prepared/e3f3e06c77a495a85f74/manifest.json",
+      "preprocessing_workers": 8,
+      "minimum_tokens": 30,
+      "maximum_sentence_tokens": 256,
+      "tokenizer_hmm": false
+    },
+    "data_code_sha256": "9f6adb4590fbb175e5d0d57790bb3e822f3ff254faa78beb74047a82f6c2cf27",
+    "full_data_code_sha256": "70a7e3253b6afab55e0adb918779b8e0d277932915888413dda1d7c0ec191461",
+    "reference_manifest_sha256": "2f8cdc8a5c254f5efd0cccd9ccf01dc9a2d276c0d719bd5903f5f5ae302bd203",
+    "jieba_version": "0.42.1",
+    "jieba_dictionary_sha256": "7197c3211ddd98962b036cdf40324d1ea2bfaa12bd028e68faa70111a88e12a8"
+  },
+  "directory": "data/thucnews/prepared/9cb3ecd006ae1a9a1f7f",
+  "source": {
+    "retrieved": "2026-10-09T11:59:41+08:00",
+    "url": "https://thunlp.oss-cn-qingdao.aliyuncs.com/THUCNews.zip",
+    "etag": "A863E3A1118AEFD00EBEF7EDD23D7738-10000",
+    "bytes": 1560309796,
+    "sha256": "8d6aef71c4431ba27c217a00adb2be7a78f8aa44f3c0bcb99d57a9026bcf163c",
+    "zip_members": 1672196,
+    "ignored_members": 836121,
+    "article_files": 836075,
+    "article_bytes": 2190479506,
+    "categories": {
+      "体育": 131604,
+      "娱乐": 92632,
+      "家居": 32586,
+      "彩票": 7588,
+      "房产": 20050,
+      "教育": 41936,
+      "时尚": 13368,
+      "时政": 63086,
+      "星座": 3578,
+      "游戏": 24373,
+      "社会": 50849,
+      "科技": 162929,
+      "股票": 154398,
+      "财经": 37098
+    },
+    "filename_encoding": "UTF-8 bytes without ZIP UTF-8 flag; repair cp437 decoding",
+    "integrity": "Archive SHA-256 and central-directory size checks; every selected member is CRC-checked by ZipFile.read",
+    "description_source": "https://github.com/thunlp/THUCTC"
+  },
+  "processed_articles": 836075,
+  "eligible_articles": 826609,
+  "categories": {
+    "体育": {
+      "train": 130615,
+      "holdout": 787
+    },
+    "娱乐": {
+      "train": 91943,
+      "holdout": 554
+    },
+    "家居": {
+      "train": 29644,
+      "holdout": 195
+    },
+    "彩票": {
+      "train": 7263,
+      "holdout": 46
+    },
+    "房产": {
+      "train": 19739,
+      "holdout": 120
+    },
+    "教育": {
+      "train": 40950,
+      "holdout": 251
+    },
+    "时尚": {
+      "train": 13013,
+      "holdout": 80
+    },
+    "时政": {
+      "train": 62192,
+      "holdout": 377
+    },
+    "星座": {
+      "train": 3536,
+      "holdout": 21
+    },
+    "游戏": {
+      "train": 24137,
+      "holdout": 146
+    },
+    "社会": {
+      "train": 50503,
+      "holdout": 304
+    },
+    "科技": {
+      "train": 160739,
+      "holdout": 974
+    },
+    "股票": {
+      "train": 150952,
+      "holdout": 923
+    },
+    "财经": {
+      "train": 36383,
+      "holdout": 222
+    }
+  },
+  "partitions": {
+    "train": {
+      "documents": 821609,
+      "tokens": 378641761,
+      "sentences": 18576718
+    },
+    "holdout": {
+      "documents": 5000,
+      "tokens": 2337756,
+      "sentences": 114052
+    }
+  },
+  "excluded": {
+    "short_document": 8232,
+    "duplicate_clean_text": 1234
+  },
+  "files": {
+    "documents.jsonl": "445b016c051bcb2e91385615dcb5224566662c400b1ba85d12cbf0a8ca857750",
+    "train.txt": "c115120ee43854f84b428434410ed92d747cca4280edbb0c12838f2b62a662b7",
+    "holdout.txt": "f5bac15a0b5ec56293a9fa68ed99f025bf51bee0a7ba7d9adefd49bf6fe413be",
+    "train_sentences.csv": "fdedf578741d5d2e49c2a6e6adca17fc4edd12f37a6b1d1bad7f4ad53af63ffe",
+    "holdout_sentences.csv": "e953f9726410c923365d60f328756cbc46daccc2d733ab41018e6640ae2cd0df",
+    "exclusions.csv": "a0115074f073604c56b3213f32cbaae02d22951bfdfa6c7061e466c901d1734a"
+  },
+  "fingerprint": "8c2a7fd983c6f86ef8110117a9ded6dd62b8d393713000ad32fb23dd7e6dd8aa",
+  "integrity": "All raw articles traversed and CRC-checked; all accepted clean-text hashes unique; exact reference holdout retained; near-duplicate grouping not applied",
+  "context": "Sentence boundaries, maximum 256 tokens; no contexts cross documents",
+  "order": "Documents ordered by SHA-256 of archive member name, interleaving categories"
+}

@@ -1,0 +1,9 @@
+schema_version: 1
+source_experiment: artifacts/thucnews_small_search/experiments/e5cc57786fa3cd4195698419
+learning_rates: [0.005, 0.01, 0.025, 0.05, 0.1]
+seeds: [42, 2026, 7]
+training_methods: {word2vec: sg_ns5, fasttext: sg_ns10}
+reference_alpha: 0.025
+selection: all_rates_three_seed_validation_mean
+expected_runs: 30
+# Reuse sealed worker specifications; only initial alpha and model seed vary.

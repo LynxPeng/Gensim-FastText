@@ -1,0 +1,33 @@
+schema_version: 2
+source:
+  url: https://thunlp.oss-cn-qingdao.aliyuncs.com/THUCNews.zip
+  bytes: 1560309796
+  etag: A863E3A1118AEFD00EBEF7EDD23D7738-10000
+sample:
+  mode: full
+  documents: null
+  seed: 42
+  holdout_documents: 5000
+  holdout_reference: data/thucnews/prepared/e3f3e06c77a495a85f74/manifest.json
+  preprocessing_workers: 8
+  minimum_tokens: 30
+  maximum_sentence_tokens: 256
+  tokenizer_hmm: false
+models: [word2vec, fasttext]
+embedding:
+  vector_size: 100
+  window: 5
+  min_count: 5
+  epochs: 5
+  sg: 0
+  hs: 1
+  negative: 0
+  sample: 0.001
+  alpha: 0.025
+  min_alpha: 0.0001
+  workers: 1
+  batch_words: 10000
+fasttext:
+  min_n: 1
+  max_n: 3
+  bucket: 200000

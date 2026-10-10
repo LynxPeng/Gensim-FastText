@@ -1,0 +1,13 @@
+{
+  "source": "scipilot-figure-skill/scripts",
+  "skill": "C:/Users/wangj/.codex/skills/scipilot-figure-skill/SKILL.md",
+  "copied_unmodified": true,
+  "files": {
+    "check_figure.py": "861191858ff47c5af5247f08d0759b14956a2a7e7d8eafcc6b414d37b9d70f06",
+    "export_figure.py": "40ce3bcd31dfc4b33e38a1cb180c75dc730ee6fa046f04934c79f285c6f890c1",
+    "layout_tools.py": "68e1d25774148fe78f5d87035d651f5e3707382502505cb11f62f9ec7ae88e49",
+    "profile_data.py": "d8a2a72c2607c390f2d3ed1508209d515ad4fbf833fa1602ab9da519b3596ec4",
+    "setup_style.py": "d58ef81684577bb605a92733dd2ca48ade03b4f819b3d255fd62f319be7fea82",
+    "visual_qa.py": "67675709e523c76e2748d50749de7bc6332f07df865379b26d024321fb40120f"
+  }
+}

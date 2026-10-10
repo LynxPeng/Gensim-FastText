@@ -1,0 +1,35 @@
+schema_version: 1
+dataset: data/processed
+sources:
+  tfidf: artifacts/thucnews/runs/928ed691978c06e8cc9d3d1e
+  word2vec: artifacts/thucnews_validation/runs/1109be5a651700f6a95e3c96
+  fasttext: artifacts/thucnews_validation/runs/31fd3e9423f08bd77a62e68d
+classes: [2, 4, 8, 12]
+seed: 42
+seeds: [42, 2026, 7]
+selection_metric: macro_f1
+linear:
+  C: [0.1, 1.0, 10.0]
+  max_iter: 20000
+  class_weight: balanced
+softmax:
+  learning_rates: [0.001, 0.01, 0.05]
+  batch_size: 256
+  weight_decay: 0.0001
+  min_epochs: 10
+  max_epochs: 60
+  patience: 8
+  min_delta: 0.001
+native:
+  dim: 100
+  epochs: [5, 15, 25]
+  lr: 0.1
+  minCount: 1
+  wordNgrams: 2
+  minn: 0
+  maxn: 0
+  loss: softmax
+  bucket: 200000
+bootstrap:
+  repetitions: 2000
+  seed: 20261010

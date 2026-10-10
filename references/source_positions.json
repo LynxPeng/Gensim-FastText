@@ -1,0 +1,184 @@
+[
+  {
+    "concept": "字符子词",
+    "path": "references/sources/gensim-4.4.0/models/fasttext_inner.pyx",
+    "line": 677,
+    "symbol": "cpdef compute_ngrams_bytes",
+    "url": "https://github.com/piskvorky/gensim/blob/4.4.0/gensim/models/fasttext_inner.pyx#L677"
+  },
+  {
+    "concept": "兼容 FNV 哈希",
+    "path": "references/sources/gensim-4.4.0/models/fasttext_inner.pyx",
+    "line": 619,
+    "symbol": "cpdef ft_hash_bytes",
+    "url": "https://github.com/piskvorky/gensim/blob/4.4.0/gensim/models/fasttext_inner.pyx#L619"
+  },
+  {
+    "concept": "OOV 向量",
+    "path": "references/sources/gensim-4.4.0/models/fasttext.py",
+    "line": 1085,
+    "symbol": "def get_vector(self, word",
+    "url": "https://github.com/piskvorky/gensim/blob/4.4.0/gensim/models/fasttext.py#L1085"
+  },
+  {
+    "concept": "词内向量聚合",
+    "path": "references/sources/gensim-4.4.0/models/fasttext.py",
+    "line": 1191,
+    "symbol": "def adjust_vectors",
+    "url": "https://github.com/piskvorky/gensim/blob/4.4.0/gensim/models/fasttext.py#L1191"
+  },
+  {
+    "concept": "子词桶缓存",
+    "path": "references/sources/gensim-4.4.0/models/fasttext.py",
+    "line": 1210,
+    "symbol": "def recalc_char_ngram_buckets",
+    "url": "https://github.com/piskvorky/gensim/blob/4.4.0/gensim/models/fasttext.py#L1210"
+  },
+  {
+    "concept": "训练 Cython 内核",
+    "path": "references/sources/gensim-4.4.0/models/fasttext_inner.pyx",
+    "line": 570,
+    "symbol": "def train_batch_any",
+    "url": "https://github.com/piskvorky/gensim/blob/4.4.0/gensim/models/fasttext_inner.pyx#L570"
+  },
+  {
+    "concept": "负采样",
+    "path": "references/sources/gensim-4.4.0/models/fasttext_inner.pyx",
+    "line": 75,
+    "symbol": "cdef void fasttext_fast_sentence_sg_neg",
+    "url": "https://github.com/piskvorky/gensim/blob/4.4.0/gensim/models/fasttext_inner.pyx#L75"
+  },
+  {
+    "concept": "层次 softmax",
+    "path": "references/sources/gensim-4.4.0/models/fasttext_inner.pyx",
+    "line": 148,
+    "symbol": "cdef void fasttext_fast_sentence_sg_hs",
+    "url": "https://github.com/piskvorky/gensim/blob/4.4.0/gensim/models/fasttext_inner.pyx#L148"
+  },
+  {
+    "concept": "词表过滤与下采样",
+    "path": "references/sources/gensim-4.4.0/models/word2vec.py",
+    "line": 595,
+    "symbol": "def prepare_vocab",
+    "url": "https://github.com/piskvorky/gensim/blob/4.4.0/gensim/models/word2vec.py#L595"
+  },
+  {
+    "concept": "负采样分布",
+    "path": "references/sources/gensim-4.4.0/models/word2vec.py",
+    "line": 825,
+    "symbol": "def make_cum_table",
+    "url": "https://github.com/piskvorky/gensim/blob/4.4.0/gensim/models/word2vec.py#L825"
+  },
+  {
+    "concept": "工作线程",
+    "path": "references/sources/gensim-4.4.0/models/word2vec.py",
+    "line": 1138,
+    "symbol": "def _worker_loop(self",
+    "url": "https://github.com/piskvorky/gensim/blob/4.4.0/gensim/models/word2vec.py#L1138"
+  },
+  {
+    "concept": "任务生产与批次",
+    "path": "references/sources/gensim-4.4.0/models/word2vec.py",
+    "line": 1172,
+    "symbol": "def _job_producer",
+    "url": "https://github.com/piskvorky/gensim/blob/4.4.0/gensim/models/word2vec.py#L1172"
+  },
+  {
+    "concept": "学习率",
+    "path": "references/sources/gensim-4.4.0/models/word2vec.py",
+    "line": 1441,
+    "symbol": "def _get_next_alpha",
+    "url": "https://github.com/piskvorky/gensim/blob/4.4.0/gensim/models/word2vec.py#L1441"
+  },
+  {
+    "concept": "保存模型",
+    "path": "references/sources/gensim-4.4.0/models/fasttext.py",
+    "line": 599,
+    "symbol": "def save(self",
+    "url": "https://github.com/piskvorky/gensim/blob/4.4.0/gensim/models/fasttext.py#L599"
+  },
+  {
+    "concept": "监督分类特征",
+    "path": "references/sources/fastText-0.9.2/src/dictionary.cc",
+    "line": 312,
+    "symbol": "void Dictionary::addWordNgrams",
+    "url": "https://github.com/facebookresearch/fastText/blob/v0.9.2/src/dictionary.cc#L312"
+  },
+  {
+    "concept": "原生子词",
+    "path": "references/sources/fastText-0.9.2/src/dictionary.cc",
+    "line": 172,
+    "symbol": "void Dictionary::computeSubwords",
+    "url": "https://github.com/facebookresearch/fastText/blob/v0.9.2/src/dictionary.cc#L172"
+  },
+  {
+    "concept": "原生哈希兼容",
+    "path": "references/sources/fastText-0.9.2/src/dictionary.cc",
+    "line": 163,
+    "symbol": "uint32_t Dictionary::hash",
+    "url": "https://github.com/facebookresearch/fastText/blob/v0.9.2/src/dictionary.cc#L163"
+  },
+  {
+    "concept": "监督模式下采样",
+    "path": "references/sources/fastText-0.9.2/src/dictionary.cc",
+    "line": 120,
+    "symbol": "bool Dictionary::discard",
+    "url": "https://github.com/facebookresearch/fastText/blob/v0.9.2/src/dictionary.cc#L120"
+  },
+  {
+    "concept": "特征平均",
+    "path": "references/sources/fastText-0.9.2/src/model.cc",
+    "line": 42,
+    "symbol": "void Model::computeHidden",
+    "url": "https://github.com/facebookresearch/fastText/blob/v0.9.2/src/model.cc#L42"
+  },
+  {
+    "concept": "监督目标",
+    "path": "references/sources/fastText-0.9.2/src/fasttext.cc",
+    "line": 370,
+    "symbol": "void FastText::supervised",
+    "url": "https://github.com/facebookresearch/fastText/blob/v0.9.2/src/fasttext.cc#L370"
+  },
+  {
+    "concept": "原生线程及学习率",
+    "path": "references/sources/fastText-0.9.2/src/fasttext.cc",
+    "line": 632,
+    "symbol": "void FastText::trainThread",
+    "url": "https://github.com/facebookresearch/fastText/blob/v0.9.2/src/fasttext.cc#L632"
+  },
+  {
+    "concept": "原生目标分派",
+    "path": "references/sources/fastText-0.9.2/src/fasttext.cc",
+    "line": 32,
+    "symbol": "std::shared_ptr<Loss> FastText::createLoss",
+    "url": "https://github.com/facebookresearch/fastText/blob/v0.9.2/src/fasttext.cc#L32"
+  },
+  {
+    "concept": "Python 入口",
+    "path": "references/sources/fastText-0.9.2/python/fasttext_module/fasttext/FastText.py",
+    "line": 501,
+    "symbol": "def train_supervised",
+    "url": "https://github.com/facebookresearch/fastText/blob/v0.9.2/python/fasttext_module/fasttext/FastText.py#L501"
+  },
+  {
+    "concept": "pybind 与 GIL",
+    "path": "references/sources/fastText-0.9.2/python/fasttext_module/fasttext/pybind/fasttext_pybind.cc",
+    "line": 168,
+    "symbol": "gil_scoped_release",
+    "url": "https://github.com/facebookresearch/fastText/blob/v0.9.2/python/fasttext_module/fasttext/pybind/fasttext_pybind.cc#L168"
+  },
+  {
+    "concept": "原生保存",
+    "path": "references/sources/fastText-0.9.2/src/fasttext.cc",
+    "line": 192,
+    "symbol": "void FastText::saveModel",
+    "url": "https://github.com/facebookresearch/fastText/blob/v0.9.2/src/fasttext.cc#L192"
+  },
+  {
+    "concept": "连续内存",
+    "path": "references/sources/fastText-0.9.2/src/densematrix.cc",
+    "line": 20,
+    "symbol": "DenseMatrix::DenseMatrix",
+    "url": "https://github.com/facebookresearch/fastText/blob/v0.9.2/src/densematrix.cc#L20"
+  }
+]

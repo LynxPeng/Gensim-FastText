@@ -1,0 +1,8 @@
+* text=auto eol=lf
+*.png binary
+*.jpg binary
+*.svg binary
+references/** -text
+artifacts/** -text
+data/** -text
+reports/Gensim&FastText-去AI味版.md -text

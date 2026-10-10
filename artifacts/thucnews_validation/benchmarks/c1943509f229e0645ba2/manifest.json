@@ -1,0 +1,254 @@
+{
+  "spec": {
+    "source": {
+      "wordsim240": {
+        "kind": "similarity",
+        "n": 240,
+        "path": "artifacts\\word_evaluation\\benchmarks\\wordsim240.tsv",
+        "sha256": "bd3d45cf2d28e28582da2242db3e4657ef7792d47973c268fa08461c47b4c983",
+        "source_sha256": "822b25ceba0f6b916355e20a6611704de4b65933898196ee19de95f9c0203483"
+      },
+      "wordsim297": {
+        "kind": "similarity",
+        "n": 297,
+        "path": "artifacts\\word_evaluation\\benchmarks\\wordsim297.tsv",
+        "sha256": "977da7f84bc4801927022d1730da1760fe1f8d095fc5f7c07c52fa52f8a7156b",
+        "source_sha256": "d2e7a4b162e79ef619b0c57c3019adf3d1ae1d12fe3ca11e9a86e4e0df879664"
+      },
+      "wordsim296": {
+        "kind": "similarity",
+        "n": 296,
+        "path": "artifacts\\word_evaluation\\benchmarks\\wordsim296.tsv",
+        "sha256": "de53555e379d4662db360366aecd37d652276e2266ca39ccf5c0437343952962",
+        "removed_pair": [
+          "OPEC",
+          "石油"
+        ]
+      },
+      "CA_translated": {
+        "kind": "analogy",
+        "n": 953,
+        "path": "artifacts\\word_evaluation\\benchmarks\\CA_translated.txt",
+        "sha256": "858320fdc0a287d7539bfb772046256a653e874a6c3cc9d3945d887961edbfaf",
+        "source_sha256": "94919a535ed2e0682e6ad12f7508b2aac9b11d0fa048999ec85b9723c0f0aef5"
+      },
+      "CA8_morphological": {
+        "kind": "analogy",
+        "n": 10177,
+        "path": "artifacts\\word_evaluation\\benchmarks\\CA8_morphological.txt",
+        "sha256": "ed47740c28d5ce052f205e7ffff8e28dfefe451fcd39867bbe98ef710cc6bf4f",
+        "source_sha256": "ed47740c28d5ce052f205e7ffff8e28dfefe451fcd39867bbe98ef710cc6bf4f"
+      },
+      "CA8_semantic": {
+        "kind": "analogy",
+        "n": 7636,
+        "path": "artifacts\\word_evaluation\\benchmarks\\CA8_semantic.txt",
+        "sha256": "aed64568e6350ce08f7b9e4af2bd8aadd7ff0498b812cd94c660638ed8ad1f4a",
+        "source_sha256": "aed64568e6350ce08f7b9e4af2bd8aadd7ff0498b812cd94c660638ed8ad1f4a"
+      }
+    },
+    "validation": {
+      "fraction": 0.4,
+      "primary_benchmark": "wordsim240",
+      "primary_metric": "spearman_rho",
+      "min_epochs": 5,
+      "max_epochs": 15,
+      "patience": 3,
+      "min_delta": 0.001,
+      "analogy_probe_per_benchmark": 128
+    },
+    "seed": 42,
+    "normalization": "NFKC uppercase; unordered pairs; equivalent analogy relations; first duplicate retained",
+    "protocol_sha256": "033d837ec1a15afb6e3654733762367accbac812e7224289f8f55fc9c6c5eef5"
+  },
+  "benchmarks": {
+    "wordsim240": {
+      "kind": "similarity",
+      "original_n": 240,
+      "duplicates_removed": 3,
+      "validation": {
+        "n": 95,
+        "path": "artifacts/thucnews_validation/benchmarks/c1943509f229e0645ba2/wordsim240_validation.txt",
+        "sha256": "c22e8f11cf828b717db9e90e24f31a1797567ed840353501ff3172709bdbfa94"
+      },
+      "test": {
+        "n": 142,
+        "path": "artifacts/thucnews_validation/benchmarks/c1943509f229e0645ba2/wordsim240_test.txt",
+        "sha256": "e904a2be284e9e817a4ba299b8c33f6b02e041a27e9d1336dac5e14566d6f025"
+      }
+    },
+    "wordsim297": {
+      "kind": "similarity",
+      "original_n": 297,
+      "duplicates_removed": 2,
+      "validation": {
+        "n": 109,
+        "path": "artifacts/thucnews_validation/benchmarks/c1943509f229e0645ba2/wordsim297_validation.txt",
+        "sha256": "eca3e205ab78ac5f6ab574dbcc794d5d97eff1ed741ce5e4550ebbb622600e2a"
+      },
+      "test": {
+        "n": 186,
+        "path": "artifacts/thucnews_validation/benchmarks/c1943509f229e0645ba2/wordsim297_test.txt",
+        "sha256": "29567948b6159db828ff010a5fa2d10474213bea56aaa24f04e5010b3021d4e5"
+      }
+    },
+    "wordsim296": {
+      "kind": "similarity",
+      "original_n": 296,
+      "duplicates_removed": 2,
+      "validation": {
+        "n": 108,
+        "path": "artifacts/thucnews_validation/benchmarks/c1943509f229e0645ba2/wordsim296_validation.txt",
+        "sha256": "716d6cf93bcd5f77dcc5656414088495d6cdf8ccb95020f41de60ebbd90ebdac"
+      },
+      "test": {
+        "n": 186,
+        "path": "artifacts/thucnews_validation/benchmarks/c1943509f229e0645ba2/wordsim296_test.txt",
+        "sha256": "29567948b6159db828ff010a5fa2d10474213bea56aaa24f04e5010b3021d4e5"
+      }
+    },
+    "CA_translated": {
+      "kind": "analogy",
+      "original_n": 953,
+      "duplicates_removed": 413,
+      "validation": {
+        "n": 221,
+        "path": "artifacts/thucnews_validation/benchmarks/c1943509f229e0645ba2/CA_translated_validation.txt",
+        "sha256": "2da00887f135fe4ea44991407dc4cc43ad41ce493f5335e69c1517daae033e1a"
+      },
+      "validation_probe": {
+        "n": 128,
+        "path": "artifacts/thucnews_validation/benchmarks/c1943509f229e0645ba2/CA_translated_validation_probe.txt",
+        "sha256": "3a0a1816a9374bd29974bfb6a115bb91a5c2a9eed0ecc2ac70709817a00874da"
+      },
+      "test": {
+        "n": 319,
+        "path": "artifacts/thucnews_validation/benchmarks/c1943509f229e0645ba2/CA_translated_test.txt",
+        "sha256": "57e17d9f3998289da2d2139d3ac1ec65f6761f320f18fcbf78b953e1dd8523eb"
+      }
+    },
+    "CA8_morphological": {
+      "kind": "analogy",
+      "original_n": 10177,
+      "duplicates_removed": 33,
+      "validation": {
+        "n": 4076,
+        "path": "artifacts/thucnews_validation/benchmarks/c1943509f229e0645ba2/CA8_morphological_validation.txt",
+        "sha256": "1b0640bebc222ad8355016fe58bd2e754d070dbfa0e41b29280c263dd874f262"
+      },
+      "validation_probe": {
+        "n": 128,
+        "path": "artifacts/thucnews_validation/benchmarks/c1943509f229e0645ba2/CA8_morphological_validation_probe.txt",
+        "sha256": "74e36c39f5198002ff481a9a0942db6ae67d2400027e290ddb6a51cc37821aeb"
+      },
+      "test": {
+        "n": 6068,
+        "path": "artifacts/thucnews_validation/benchmarks/c1943509f229e0645ba2/CA8_morphological_test.txt",
+        "sha256": "3f06d27e51b2eade33970b629fb324d2764739e18dddf64f17eaf9f9f9bf1e86"
+      }
+    },
+    "CA8_semantic": {
+      "kind": "analogy",
+      "original_n": 7636,
+      "duplicates_removed": 1,
+      "validation": {
+        "n": 3092,
+        "path": "artifacts/thucnews_validation/benchmarks/c1943509f229e0645ba2/CA8_semantic_validation.txt",
+        "sha256": "317abd778dfea24f1b097088ba16b9f56acf74b78268d39ddffeb2ce2efb0158"
+      },
+      "validation_probe": {
+        "n": 128,
+        "path": "artifacts/thucnews_validation/benchmarks/c1943509f229e0645ba2/CA8_semantic_validation_probe.txt",
+        "sha256": "952229697efa8663f4b044de2bf3f7c4425eb6ce615241960a7dcb6da1f6e8f6"
+      },
+      "test": {
+        "n": 4543,
+        "path": "artifacts/thucnews_validation/benchmarks/c1943509f229e0645ba2/CA8_semantic_test.txt",
+        "sha256": "52951e6e043039664a5dfa87234b1f48b0b58a77f6899021a5fd9049801d8d48"
+      }
+    }
+  },
+  "validation_unique_groups": 7405,
+  "test_unique_groups": 10990,
+  "overlap_groups": 0,
+  "conflicting_duplicates": [
+    {
+      "benchmark": "wordsim240",
+      "line": 64,
+      "key": [
+        "similarity",
+        "货币",
+        "银行"
+      ],
+      "kept_gold": "7.95",
+      "excluded_gold": "7.645"
+    },
+    {
+      "benchmark": "wordsim240",
+      "line": 188,
+      "key": [
+        "similarity",
+        "墓地",
+        "森林"
+      ],
+      "kept_gold": "5.85",
+      "excluded_gold": "4.5"
+    },
+    {
+      "benchmark": "wordsim240",
+      "line": 216,
+      "key": [
+        "similarity",
+        "生活",
+        "股票"
+      ],
+      "kept_gold": "3.8",
+      "excluded_gold": "2.4"
+    },
+    {
+      "benchmark": "wordsim297",
+      "line": 24,
+      "key": [
+        "similarity",
+        "现金",
+        "钱"
+      ],
+      "kept_gold": "4.58",
+      "excluded_gold": "3.688"
+    },
+    {
+      "benchmark": "wordsim297",
+      "line": 85,
+      "key": [
+        "similarity",
+        "钱",
+        "银行"
+      ],
+      "kept_gold": "4.292",
+      "excluded_gold": "2.9111111111"
+    },
+    {
+      "benchmark": "wordsim296",
+      "line": 24,
+      "key": [
+        "similarity",
+        "现金",
+        "钱"
+      ],
+      "kept_gold": "4.58",
+      "excluded_gold": "3.688"
+    },
+    {
+      "benchmark": "wordsim296",
+      "line": 85,
+      "key": [
+        "similarity",
+        "钱",
+        "银行"
+      ],
+      "kept_gold": "4.292",
+      "excluded_gold": "2.9111111111"
+    }
+  ],
+  "directory": "artifacts/thucnews_validation/benchmarks/c1943509f229e0645ba2"
+}

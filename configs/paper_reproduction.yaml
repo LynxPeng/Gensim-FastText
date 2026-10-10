@@ -1,0 +1,51 @@
+# Original-data experiments; Gensim is a two-stage approximation, native is supervised.
+seeds: [42, 2026, 7]
+embedding:
+  sg: 0
+  window: 5
+  epochs: 5
+  workers: 20
+  min_count: 1
+  min_n: 3
+  max_n: 6
+  bucket: 200000
+  negative: 5
+  sample: 0.001
+  alpha: 0.025
+  min_alpha: 0.0001
+classification:
+  dimension: 10
+  classifier_c: 1.0
+  native_word_ngrams: [1, 2]
+  native_bucket: 10000000
+  native_epochs: 5
+  native_loss: hs
+  native_threads: 20
+  datasets:
+    ag_news: {train: 120000, test: 7600, classes: 4, learning_rate: 0.25}
+    sogou_news: {train: 450000, test: 60000, classes: 5, learning_rate: 0.5}
+    dbpedia: {train: 560000, test: 70000, classes: 14, learning_rate: 0.5}
+    yelp_review_polarity: {train: 560000, test: 38000, classes: 2, learning_rate: 0.1}
+    yelp_review_full: {train: 650000, test: 50000, classes: 5, learning_rate: 0.1}
+    yahoo_answers: {train: 1400000, test: 60000, classes: 10, learning_rate: 0.1}
+    amazon_review_full: {train: 3000000, test: 650000, classes: 5, learning_rate: 0.05}
+    amazon_review_polarity: {train: 3600000, test: 400000, classes: 2, learning_rate: 0.05}
+tags:
+  train: 91188648
+  validation: 930497
+  raw_test: 930497
+  effective_validation: 542967
+  test: 543424
+  labels: 312116
+  dimensions: [50, 200]
+  native_word_ngrams: [1, 2]
+  native_bucket: 10000000
+  native_epochs: 5
+  native_loss: hs
+  native_learning_rate: 0.1
+  native_threads: 20
+  gensim_min_count: 100
+  classifier_epochs: 5
+  classifier_learning_rate: 0.1
+  classifier_batch_size: 8192
+  classifier_device: auto

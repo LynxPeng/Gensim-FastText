@@ -1,0 +1,21 @@
+schema_version: 1
+topic_experiment: artifacts/pfr_topics/experiments/aa186821a473ccf786c78e9f
+sources:
+  tfidf: artifacts/thucnews/runs/928ed691978c06e8cc9d3d1e
+  word2vec: artifacts/thucnews_validation/runs/1109be5a651700f6a95e3c96
+  fasttext: artifacts/thucnews_validation/runs/31fd3e9423f08bd77a62e68d
+svm:
+  C: [0.1, 1.0, 10.0]
+  class_weight: balanced
+  dual: false
+  penalty: l2
+  loss: squared_hinge
+  multi_class: ovr
+  fit_intercept: true
+  tol: 0.0001
+  max_iter: 20000
+  random_state: 42
+selection_metric: validation_macro_f1
+bootstrap:
+  repetitions: 2000
+  seed: 20261010

@@ -1,0 +1,107 @@
+{
+  "created": "2026-10-08T10:36:16+08:00",
+  "repositories": [
+    {
+      "repository": "Leonard-Xu/CWE",
+      "commit": "bc55e88a4be9480d585f009e36ce169ec041ae15",
+      "license_api": {
+        "key": "mit",
+        "name": "MIT License",
+        "spdx_id": "MIT",
+        "url": "https://api.github.com/licenses/mit",
+        "node_id": "MDc6TGljZW5zZTEz"
+      }
+    },
+    {
+      "repository": "Embedding/Chinese-Word-Vectors",
+      "commit": "3096a475f79f218dde7b413dcc6b507d302b7f46",
+      "license_api": {
+        "key": "apache-2.0",
+        "name": "Apache License 2.0",
+        "spdx_id": "Apache-2.0",
+        "url": "https://api.github.com/licenses/apache-2.0",
+        "node_id": "MDc6TGljZW5zZTI="
+      }
+    }
+  ],
+  "files": [
+    {
+      "path": "references/word_benchmarks/CWE/data/240.txt",
+      "url": "https://raw.githubusercontent.com/Leonard-Xu/CWE/bc55e88a4be9480d585f009e36ce169ec041ae15/data/240.txt",
+      "sha256": "822b25ceba0f6b916355e20a6611704de4b65933898196ee19de95f9c0203483",
+      "bytes": 4896
+    },
+    {
+      "path": "references/word_benchmarks/CWE/data/297.txt",
+      "url": "https://raw.githubusercontent.com/Leonard-Xu/CWE/bc55e88a4be9480d585f009e36ce169ec041ae15/data/297.txt",
+      "sha256": "d2e7a4b162e79ef619b0c57c3019adf3d1ae1d12fe3ca11e9a86e4e0df879664",
+      "bytes": 7169
+    },
+    {
+      "path": "references/word_benchmarks/CWE/data/README.md",
+      "url": "https://raw.githubusercontent.com/Leonard-Xu/CWE/bc55e88a4be9480d585f009e36ce169ec041ae15/data/README.md",
+      "sha256": "e73cc66680a13f83b394abd0c3c09acfa226292e3bd5d0b040d9f764ee5341a7",
+      "bytes": 1329
+    },
+    {
+      "path": "references/word_benchmarks/CWE/data/analogy.txt",
+      "url": "https://raw.githubusercontent.com/Leonard-Xu/CWE/bc55e88a4be9480d585f009e36ce169ec041ae15/data/analogy.txt",
+      "sha256": "aa90024695f5a82411940804e03ee1512df2a3be0a5aa44da404423ae34d9247",
+      "bytes": 30585
+    },
+    {
+      "path": "references/word_benchmarks/CWE/data/non-composition.txt",
+      "url": "https://raw.githubusercontent.com/Leonard-Xu/CWE/bc55e88a4be9480d585f009e36ce169ec041ae15/data/non-composition.txt",
+      "sha256": "3778b67ee8a8a3296ba1513151cf8eca2d05d1dc55ce5e7cc57586af36af1450",
+      "bytes": 1830021
+    },
+    {
+      "path": "references/word_benchmarks/CWE/LICENSE",
+      "url": "https://raw.githubusercontent.com/Leonard-Xu/CWE/bc55e88a4be9480d585f009e36ce169ec041ae15/LICENSE",
+      "sha256": "ad11ff83590c755959f682ca19fd0cf4473d537bc6089ac46c1d1b674fedb96c",
+      "bytes": 1078
+    },
+    {
+      "path": "references/word_benchmarks/CWE/README.md",
+      "url": "https://raw.githubusercontent.com/Leonard-Xu/CWE/bc55e88a4be9480d585f009e36ce169ec041ae15/README.md",
+      "sha256": "eed1d7205da6c79d4909b20e946634c78abfdb7b9d5097b8631d2f060793dca8",
+      "bytes": 1699
+    },
+    {
+      "path": "references/word_benchmarks/Chinese-Word-Vectors/testsets/CA8/morphological.txt",
+      "url": "https://raw.githubusercontent.com/Embedding/Chinese-Word-Vectors/3096a475f79f218dde7b413dcc6b507d302b7f46/testsets/CA8/morphological.txt",
+      "sha256": "ed47740c28d5ce052f205e7ffff8e28dfefe451fcd39867bbe98ef710cc6bf4f",
+      "bytes": 341904
+    },
+    {
+      "path": "references/word_benchmarks/Chinese-Word-Vectors/testsets/CA8/semantic.txt",
+      "url": "https://raw.githubusercontent.com/Embedding/Chinese-Word-Vectors/3096a475f79f218dde7b413dcc6b507d302b7f46/testsets/CA8/semantic.txt",
+      "sha256": "aed64568e6350ce08f7b9e4af2bd8aadd7ff0498b812cd94c660638ed8ad1f4a",
+      "bytes": 265603
+    },
+    {
+      "path": "references/word_benchmarks/Chinese-Word-Vectors/testsets/CA_translated/ca_translated.txt",
+      "url": "https://raw.githubusercontent.com/Embedding/Chinese-Word-Vectors/3096a475f79f218dde7b413dcc6b507d302b7f46/testsets/CA_translated/ca_translated.txt",
+      "sha256": "94919a535ed2e0682e6ad12f7508b2aac9b11d0fa048999ec85b9723c0f0aef5",
+      "bytes": 31539
+    },
+    {
+      "path": "references/word_benchmarks/Chinese-Word-Vectors/testsets/README.md",
+      "url": "https://raw.githubusercontent.com/Embedding/Chinese-Word-Vectors/3096a475f79f218dde7b413dcc6b507d302b7f46/testsets/README.md",
+      "sha256": "7f485af1e71471beb216a75ce1527b0fcdb451d841a6b592ba5c95109a46cbbe",
+      "bytes": 15147
+    },
+    {
+      "path": "references/word_benchmarks/Chinese-Word-Vectors/LICENSE",
+      "url": "https://raw.githubusercontent.com/Embedding/Chinese-Word-Vectors/3096a475f79f218dde7b413dcc6b507d302b7f46/LICENSE",
+      "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4",
+      "bytes": 11357
+    },
+    {
+      "path": "references/word_benchmarks/Chinese-Word-Vectors/README.md",
+      "url": "https://raw.githubusercontent.com/Embedding/Chinese-Word-Vectors/3096a475f79f218dde7b413dcc6b507d302b7f46/README.md",
+      "sha256": "505fcc98f5b9a4b21260c192b79fe7ff6fe7cb339f1f7580dd2c69b8889c4d97",
+      "bytes": 22132
+    }
+  ]
+}

@@ -1,0 +1,231 @@
+{
+  "created": "2026-10-07T17:56:43+08:00",
+  "sources": [
+    {
+      "path": "references/sources/gensim-4.4.0/models/fasttext.py",
+      "version": "4.4.0",
+      "origin": "installed PyPI wheel",
+      "url": "https://github.com/piskvorky/gensim/blob/4.4.0/gensim/models/fasttext.py",
+      "sha256": "a70e7c7b084ee8c9e03267023619d11d5e10a3dfe730e454ca95090c762f7770",
+      "upstream_url": "https://raw.githubusercontent.com/piskvorky/gensim/4.4.0/gensim/models/fasttext.py",
+      "upstream_sha256": "65ee6cce1fdd3a3ef1790d47fca3658029b42fbdab78d379cb2720365d95450b",
+      "exact_bytes_match": false,
+      "local_crlf_lines": 1352,
+      "matches_upstream_tag": true,
+      "comparison": "Exact text after normalizing CRLF/LF line endings"
+    },
+    {
+      "path": "references/sources/gensim-4.4.0/models/fasttext_inner.pyx",
+      "version": "4.4.0",
+      "origin": "installed PyPI wheel",
+      "url": "https://github.com/piskvorky/gensim/blob/4.4.0/gensim/models/fasttext_inner.pyx",
+      "sha256": "9c0d26f2a0409ff0ad08fa9598f05c941e200144929d5a7adabc4bb0460ecb62",
+      "upstream_url": "https://raw.githubusercontent.com/piskvorky/gensim/4.4.0/gensim/models/fasttext_inner.pyx",
+      "upstream_sha256": "09888086ab0bdf9c704049b004492f5fc1dfc2334233bb71c155451681920182",
+      "exact_bytes_match": false,
+      "local_crlf_lines": 740,
+      "matches_upstream_tag": true,
+      "comparison": "Exact text after normalizing CRLF/LF line endings"
+    },
+    {
+      "path": "references/sources/gensim-4.4.0/models/word2vec.py",
+      "version": "4.4.0",
+      "origin": "installed PyPI wheel",
+      "url": "https://github.com/piskvorky/gensim/blob/4.4.0/gensim/models/word2vec.py",
+      "sha256": "d15cb29e9602719db96847008d91f47998a44ca5c575bc517de106bf60a711bf",
+      "upstream_url": "https://raw.githubusercontent.com/piskvorky/gensim/4.4.0/gensim/models/word2vec.py",
+      "upstream_sha256": "ef3b5f7b3b010b0486a4b05bb5cfbeade25726492e0d2edd82103612fba8d008",
+      "exact_bytes_match": false,
+      "local_crlf_lines": 2329,
+      "matches_upstream_tag": true,
+      "comparison": "Exact text after normalizing CRLF/LF line endings"
+    },
+    {
+      "path": "references/sources/gensim-4.4.0/models/word2vec_inner.pyx",
+      "version": "4.4.0",
+      "origin": "installed PyPI wheel",
+      "url": "https://github.com/piskvorky/gensim/blob/4.4.0/gensim/models/word2vec_inner.pyx",
+      "sha256": "0118ae2cdb7bec66815f600a76efac1c501bdf4b646878b18a795c7c81dc6d08",
+      "upstream_url": "https://raw.githubusercontent.com/piskvorky/gensim/4.4.0/gensim/models/word2vec_inner.pyx",
+      "upstream_sha256": "53e5fd493905c719ac67e6bf4b322c233522326c23458c44def985aff7ad8ce7",
+      "exact_bytes_match": false,
+      "local_crlf_lines": 961,
+      "matches_upstream_tag": true,
+      "comparison": "Exact text after normalizing CRLF/LF line endings"
+    },
+    {
+      "path": "references/sources/gensim-4.4.0/models/doc2vec.py",
+      "version": "4.4.0",
+      "origin": "installed PyPI wheel",
+      "url": "https://github.com/piskvorky/gensim/blob/4.4.0/gensim/models/doc2vec.py",
+      "sha256": "f62afd2c25c94892f246f9ea72b6c64911161d518eb2b361affe23c15a61bb08",
+      "upstream_url": "https://raw.githubusercontent.com/piskvorky/gensim/4.4.0/gensim/models/doc2vec.py",
+      "upstream_sha256": "6b2d1cdc984b1f22ca9ffedb95c452f43a89a355997ed6e60e6ce6bbce20c6c8",
+      "exact_bytes_match": false,
+      "local_crlf_lines": 1183,
+      "matches_upstream_tag": true,
+      "comparison": "Exact text after normalizing CRLF/LF line endings"
+    },
+    {
+      "path": "references/sources/gensim-4.4.0/models/keyedvectors.py",
+      "version": "4.4.0",
+      "origin": "installed PyPI wheel",
+      "url": "https://github.com/piskvorky/gensim/blob/4.4.0/gensim/models/keyedvectors.py",
+      "sha256": "e1d05992c5d401a386f13bf29d61ed7be59af1b4a79d01b5e79cd29c8a06fa7e",
+      "upstream_url": "https://raw.githubusercontent.com/piskvorky/gensim/4.4.0/gensim/models/keyedvectors.py",
+      "upstream_sha256": "9fb7ff71b757c2bf62854ab21e8c931585eb61932f2fe192bdd351887def3ee6",
+      "exact_bytes_match": false,
+      "local_crlf_lines": 2122,
+      "matches_upstream_tag": true,
+      "comparison": "Exact text after normalizing CRLF/LF line endings"
+    },
+    {
+      "path": "references/sources/gensim-4.4.0/models/tfidfmodel.py",
+      "version": "4.4.0",
+      "origin": "installed PyPI wheel",
+      "url": "https://github.com/piskvorky/gensim/blob/4.4.0/gensim/models/tfidfmodel.py",
+      "sha256": "2a5c55822ac0acf0b58b3f9bbef401de0c0908450ba9d68003728a16f5ce7134",
+      "upstream_url": "https://raw.githubusercontent.com/piskvorky/gensim/4.4.0/gensim/models/tfidfmodel.py",
+      "upstream_sha256": "f2fc9c5fab26197e5d40e3330162f494bfde22ceb84bc9a63bd5bcc3a0cc03ff",
+      "exact_bytes_match": false,
+      "local_crlf_lines": 543,
+      "matches_upstream_tag": true,
+      "comparison": "Exact text after normalizing CRLF/LF line endings"
+    },
+    {
+      "path": "references/sources/gensim-4.4.0/corpora/dictionary.py",
+      "version": "4.4.0",
+      "origin": "installed PyPI wheel",
+      "url": "https://github.com/piskvorky/gensim/blob/4.4.0/gensim/corpora/dictionary.py",
+      "sha256": "58773f4f7f8754fd77cc3148fb1c8a8a1d3d75a6ec3334c814ddceeae18ab5ce",
+      "upstream_url": "https://raw.githubusercontent.com/piskvorky/gensim/4.4.0/gensim/corpora/dictionary.py",
+      "upstream_sha256": "10ba5c1fc1c757eb664ab438be404c9ab126e8baba7f89f088c1834e8b0c6ed7",
+      "exact_bytes_match": false,
+      "local_crlf_lines": 781,
+      "matches_upstream_tag": true,
+      "comparison": "Exact text after normalizing CRLF/LF line endings"
+    },
+    {
+      "path": "references/sources/gensim-4.4.0/utils.py",
+      "version": "4.4.0",
+      "origin": "installed PyPI wheel",
+      "url": "https://github.com/piskvorky/gensim/blob/4.4.0/gensim/utils.py",
+      "sha256": "8e7c5a8ec272ed6fc3fc1fff302045d52a77e3d59013da540b82d12ebf0ac72c",
+      "upstream_url": "https://raw.githubusercontent.com/piskvorky/gensim/4.4.0/gensim/utils.py",
+      "upstream_sha256": "aea1d55691826625402ecac51d8571f6c72f992bdef95f766d3757e318791584",
+      "exact_bytes_match": false,
+      "local_crlf_lines": 2102,
+      "matches_upstream_tag": true,
+      "comparison": "Exact text after normalizing CRLF/LF line endings"
+    },
+    {
+      "path": "references/sources/fastText-0.9.2/src/dictionary.cc",
+      "version": "0.9.2",
+      "origin": "upstream tag v0.9.2",
+      "url": "https://raw.githubusercontent.com/facebookresearch/fastText/v0.9.2/src/dictionary.cc",
+      "sha256": "5cffc5985bf9267ab309f32335135527f8cfc09f19c3d305290408ef02836a3b"
+    },
+    {
+      "path": "references/sources/fastText-0.9.2/src/dictionary.h",
+      "version": "0.9.2",
+      "origin": "upstream tag v0.9.2",
+      "url": "https://raw.githubusercontent.com/facebookresearch/fastText/v0.9.2/src/dictionary.h",
+      "sha256": "9a73cbbd94e2d0335c388d5abf042e1f2e0f08b74098701e3bead191cf3c7ac5"
+    },
+    {
+      "path": "references/sources/fastText-0.9.2/src/fasttext.cc",
+      "version": "0.9.2",
+      "origin": "upstream tag v0.9.2",
+      "url": "https://raw.githubusercontent.com/facebookresearch/fastText/v0.9.2/src/fasttext.cc",
+      "sha256": "593200ed00fe048eb48076829bfec18bd0c3f71241bcb12286ec64bb5f58dbf7"
+    },
+    {
+      "path": "references/sources/fastText-0.9.2/src/model.cc",
+      "version": "0.9.2",
+      "origin": "upstream tag v0.9.2",
+      "url": "https://raw.githubusercontent.com/facebookresearch/fastText/v0.9.2/src/model.cc",
+      "sha256": "e2ae39ca55e089ce0f22da3205700c3d266a35fd2f327b42c7150f79a30c0049"
+    },
+    {
+      "path": "references/sources/fastText-0.9.2/src/loss.cc",
+      "version": "0.9.2",
+      "origin": "upstream tag v0.9.2",
+      "url": "https://raw.githubusercontent.com/facebookresearch/fastText/v0.9.2/src/loss.cc",
+      "sha256": "5282fb64f6df248b39f373f323c49a83a8ad36c3bbd3cbb1dd680a4c77c09447"
+    },
+    {
+      "path": "references/sources/fastText-0.9.2/src/args.cc",
+      "version": "0.9.2",
+      "origin": "upstream tag v0.9.2",
+      "url": "https://raw.githubusercontent.com/facebookresearch/fastText/v0.9.2/src/args.cc",
+      "sha256": "aab12a331dc97845cdb2dea9f28cb27fe250b4583620db87fc41e4cd5bd5ceec"
+    },
+    {
+      "path": "references/sources/fastText-0.9.2/src/densematrix.cc",
+      "version": "0.9.2",
+      "origin": "upstream tag v0.9.2",
+      "url": "https://raw.githubusercontent.com/facebookresearch/fastText/v0.9.2/src/densematrix.cc",
+      "sha256": "25746a91f73edfef3b038aaf2004cf48851ec94c79dd3d98fe573c8225671fde"
+    },
+    {
+      "path": "references/sources/fastText-0.9.2/src/vector.cc",
+      "version": "0.9.2",
+      "origin": "upstream tag v0.9.2",
+      "url": "https://raw.githubusercontent.com/facebookresearch/fastText/v0.9.2/src/vector.cc",
+      "sha256": "d864f14171e283a670655a2221df0a50a9d8c068c61e7ba78e25412a97958aea"
+    },
+    {
+      "path": "references/sources/fastText-0.9.2/python/fasttext_module/fasttext/FastText.py",
+      "version": "0.9.2",
+      "origin": "upstream tag v0.9.2",
+      "url": "https://raw.githubusercontent.com/facebookresearch/fastText/v0.9.2/python/fasttext_module/fasttext/FastText.py",
+      "sha256": "9e0be8ae00dc36624d5f210a6498c14f6167121b96c7e483b0e9a851a1761ba9"
+    },
+    {
+      "path": "references/sources/fastText-0.9.2/python/fasttext_module/fasttext/pybind/fasttext_pybind.cc",
+      "version": "0.9.2",
+      "origin": "upstream tag v0.9.2",
+      "url": "https://raw.githubusercontent.com/facebookresearch/fastText/v0.9.2/python/fasttext_module/fasttext/pybind/fasttext_pybind.cc",
+      "sha256": "0642fc2b7f3492c3c9160dbe341be3a4c13e1e0bd37239bc79c78bca8362ba22"
+    },
+    {
+      "path": "references/sources/fastText-0.9.2/LICENSE",
+      "version": "0.9.2",
+      "origin": "upstream tag v0.9.2",
+      "url": "https://raw.githubusercontent.com/facebookresearch/fastText/v0.9.2/LICENSE",
+      "sha256": "d9cfdfdf548c48712f05c67eb76c79e7c9f45cba78db50794b780e3564b85ef7"
+    }
+  ],
+  "windows_distribution": {
+    "project": "fasttext-wheel",
+    "version": "0.9.2",
+    "pypi": "https://pypi.org/project/fasttext-wheel/0.9.2/",
+    "wheel": [
+      {
+        "comment_text": "",
+        "core-metadata": {
+          "sha256": "7e8ec928c191e187eecf37ae12d3a05766ffa42dc4d7129c582ecd7f00483b98"
+        },
+        "digests": {
+          "blake2b_256": "d3e15c1880859a122a57793d13685af6451bcb67be90bf74549bcf042c2ade6b",
+          "md5": "d4562c84e61ff8142bc0011a1925bb93",
+          "sha256": "8a0cc9e92377d27835a71862c68782e70c9bbd2a666a1a51b2c8261fc9892470"
+        },
+        "downloads": -1,
+        "filename": "fasttext_wheel-0.9.2-cp312-cp312-win_amd64.whl",
+        "has_sig": false,
+        "md5_digest": "d4562c84e61ff8142bc0011a1925bb93",
+        "packagetype": "bdist_wheel",
+        "python_version": "cp312",
+        "requires_python": null,
+        "size": 234667,
+        "upload_time": "2024-02-17T03:43:13",
+        "upload_time_iso_8601": "2024-02-17T03:43:13.228923Z",
+        "url": "https://files.pythonhosted.org/packages/d3/e1/5c1880859a122a57793d13685af6451bcb67be90bf74549bcf042c2ade6b/fasttext_wheel-0.9.2-cp312-cp312-win_amd64.whl",
+        "yanked": false,
+        "yanked_reason": null
+      }
+    ],
+    "note": "Third-party Windows binary distribution. Source reading uses upstream v0.9.2; this does not prove the binary is byte-identical to an upstream build."
+  }
+}

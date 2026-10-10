@@ -1,0 +1,10 @@
+schema_version: 1
+source_experiment: artifacts/thucnews_small_search/experiments/361d2139d70c8d840fc61da0
+vector_sizes: [50, 100, 150, 200, 300]
+seeds: [42, 2026, 7]
+training_methods: {word2vec: sg_ns5, fasttext: sg_ns10}
+learning_rates: {word2vec: 0.025, fasttext: 0.05}
+reference_vector_size: 100
+selection: all_dimensions_three_seed_validation_mean
+exact_tie_break: smaller_vector_size
+expected_runs: 30

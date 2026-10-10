@@ -1,0 +1,29 @@
+schema_version: 1
+manifest: data/thucnews/prepared/9cb3ecd006ae1a9a1f7f/manifest.json
+models: [word2vec, fasttext]
+seed: 42
+embedding:
+  vector_size: 100
+  window: 5
+  min_count: 5
+  sg: 0
+  hs: 1
+  negative: 0
+  sample: 0.001
+  alpha: 0.025
+  min_alpha: 0.0001
+  workers: 20
+  batch_words: 9000
+fasttext:
+  min_n: 1
+  max_n: 3
+  bucket: 200000
+validation:
+  fraction: 0.4
+  primary_benchmark: wordsim240
+  primary_metric: spearman_rho
+  min_epochs: 5
+  max_epochs: 15
+  patience: 3
+  min_delta: 0.001
+  analogy_probe_per_benchmark: 128

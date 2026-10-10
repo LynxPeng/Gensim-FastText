@@ -1,0 +1,55 @@
+schema_version: 1
+split_seed: 42
+seeds: [42, 2026, 7]
+classes: [2, 4, 8, 12]
+methods: [majority, tfidf, lsi, word2vec, doc2vec, fasttext, native_fasttext]
+min_tokens: 30
+simhash_distance: 3
+svm_c: [0.1, 1.0, 10.0]
+dictionary:
+  no_below: 3
+  no_above: 0.9
+  keep_n: 50000
+embedding:
+  vector_size: 100
+  window: 5
+  min_count: 3
+  epochs: 15
+  sg: 1
+  negative: 5
+  hs: 0
+  sample: 0.001
+  alpha: 0.025
+  min_alpha: 0.0001
+  workers: 20
+  batch_words: 10000
+  min_n: 1
+  max_n: 3
+  bucket: 200000
+  pooling: mean
+native:
+  dim: 100
+  epoch: 25
+  lr: 0.1
+  minCount: 3
+  wordNgrams: 2
+  minn: 0
+  maxn: 0
+  loss: softmax
+  bucket: 200000
+  thread: 20
+ablations:
+  vector_size: [50, 100, 200]
+  window: [3, 5, 10]
+  min_count: [1, 3, 5]
+  epochs: [5, 15, 30]
+  sg: [0, 1]
+  subwords: [[0, 0], [1, 3], [2, 4], [3, 6]]
+  bucket: [50000, 200000, 1000000]
+  objective: [ns5, ns10, hs]
+  alpha: [0.01, 0.025, 0.05]
+  sample: [0.0, 0.001]
+  pooling: [mean, tfidf]
+  native_word_ngrams: [1, 2]
+  workers: [1, 4, 8]
+  batch_words: [1000, 10000]

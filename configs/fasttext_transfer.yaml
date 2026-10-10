@@ -1,0 +1,22 @@
+schema_version: 1
+months: ['199801', '199802', '199803', '199804', '199805', '199806']
+split_seed: 42
+seed: 42
+split:
+  folds: 10
+  train_folds: 7
+  validation_folds: 1
+sources:
+  word2vec: artifacts/thucnews/runs/ce87482dfa2af2ff8bb5c861
+  fasttext: artifacts/thucnews/runs/ce1cb20e5675a099c39e3a00
+native:
+  dim: 100
+  epoch: 25
+  lr: 0.1
+  minCount: 1
+  wordNgrams: 2
+  minn: 0
+  maxn: 0
+  loss: softmax
+  bucket: 200000
+  verbose: 2
