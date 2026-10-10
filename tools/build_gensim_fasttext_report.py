@@ -3,6 +3,7 @@ import argparse
 import hashlib
 import re
 from inline_math_text import plain_inline_math
+from report_contents import with_report_contents
 
 ROOT = Path(__file__).resolve().parents[1]
 SOURCE = ROOT / 'reports/Gensim&FastText-修改版.md'
@@ -758,6 +759,7 @@ report = (main_body.rstrip() + '\n\n' + limitations + '\n\n## 附录\n\n'
           '补充结果见 [Gensim 与 FastText 附录](Gensim&FastText-附录.md)，包含附录 A–D。\n\n'
           '## 参考文献' + references.rstrip() + '\n\n' + resources)
 report, _ = plain_inline_math(report)
+report = with_report_contents(report)
 TARGET.write_text(report, encoding='utf-8', newline='\n')
 APPENDIX.write_text(appendix, encoding='utf-8', newline='\n')
 

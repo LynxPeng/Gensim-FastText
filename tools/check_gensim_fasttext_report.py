@@ -3,6 +3,7 @@ import hashlib
 import re
 from collections import Counter
 from inline_math_text import plain_inline_math
+from report_contents import with_report_contents
 
 root = Path(__file__).resolve().parents[1]
 source_path = root / 'reports/Gensim&FastText-修改版.md'
@@ -13,6 +14,9 @@ main = target_path.read_text(encoding='utf-8')
 appendix = appendix_path.read_text(encoding='utf-8')
 target = main + '\n' + appendix
 assert plain_inline_math(main)[1] == 0, 'Inline LaTeX remains in the final report.'
+assert with_report_contents(main) == main, 'Contents must match the current H2–H4 headings.'
+contents = main.split('## 目录\n\n', 1)[1].split('\n\n## ', 1)[0]
+assert not re.search(r'\[[^\n]*?\]\(', contents), 'Contents must not contain links.'
 
 source_images = re.findall(r'^!\[.*\]\((.*)\)$', source, re.M)
 target_images = re.findall(r'^!\[.*\]\((.*)\)$', target, re.M)
@@ -138,6 +142,7 @@ notes = '''# Gensim 与 FastText 终稿润色说明
 - 按作者当前终稿追加第 4 章，说明小规模选参的全量外推限制、未充分验证的参数及其交互，以及不同类别数量的实验缺口。
 - 两份编辑稿统一命名为“修改版”，同步更新引用与处理入口；生成脚本默认保护已有终稿，显式传入 `--overwrite` 才会重建。
 - 终稿的行内 LaTeX 改为普通字母、下划标记和可直接阅读的算式，独立公式块与源码片段保留。
+- 标题后、摘要前增加无链接目录，仅列正文一级至三级标题，即 Markdown H2–H4。
 - 统一图表编号，以短图像替代文本配一条可见图注；不改动图像文件、原有表格数值或源码片段。
 - 删除请求费用、调用预算、测试日志条目及反复提示读者查看本地记录的措辞；压缩讲义式定义、重复总结和过长案例。
 
@@ -191,6 +196,7 @@ notes += f'''
 - 原稿 22 张表的逐行数值全部保留，新增一张候选全量模型汇总表，共 23 张。表格列数一致。
 - 13 段 Python／Cython 代码与原稿逐字一致，全部在正文第三部分；构造文本示例在附录 A。
 - 标题层级、H4 章节编号、H5／H6 序号、图表编号、数学显示块和公式编号通过结构检查。
+- 目录逐项对应当前 H2–H4 标题，顺序一致，无链接，不收录 H5／H6。
 - 正文与附录互链有效；资源链接仅指向数据、工具和项目来源，无过程文件路径、SVG 下载链接或生成标记。
 - 自动标签、历史观察、单种子全量训练及配对区间跨零等必要限定保留在正文。
 
