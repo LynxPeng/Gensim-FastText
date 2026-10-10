@@ -173,8 +173,8 @@ def validate(report_path=OUT):
             or paper.get("sha256") != hashlib.sha256(PRIMARY_PAPER.read_bytes()).hexdigest()):
         errors.append("primary paper changed or is missing from report provenance")
     # Editorial versions derive from covered reports and add no experiment evidence.
-    derived_reports = {OUT.name, f"{OUT.stem}-去AI味版.md", report_path.name,
-                       "Gensim&FastText-去AI味版.md"}
+    derived_reports = {OUT.name, f"{OUT.stem}-修改版.md", report_path.name,
+                       "Gensim&FastText-修改版.md"}
     expected = {str(p.relative_to(ROOT)).replace("\\", "/") for p in (ROOT / "reports").glob("*.md")
                 if p.name not in derived_reports | {"Untitled.md"}}
     for path in sorted(expected - evidence["sources"].keys()):

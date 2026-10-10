@@ -63,7 +63,7 @@ def replace_block(text, body):
 
 
 def update_submission(body, selected):
-    for name in ['Gensim&FastText.md', 'Gensim&FastText-去AI味版.md']:
+    for name in ['Gensim&FastText.md', 'Gensim&FastText-修改版.md']:
         path = ROOT / 'reports' / name
         if not path.exists():
             continue
@@ -71,7 +71,7 @@ def update_submission(body, selected):
         text = path.read_text(encoding='utf-8')
         assert '<!-- thucnews-ablation:end -->' in text
         text = replace_block(text, body)
-        if name.endswith('-去AI味版.md'):
+        if name.endswith('-修改版.md'):
             if '训练方式与学习率阶段的两类模型均设为 100 维' not in text:
                 text = text.replace('两类模型均设为 100 维，窗口大小为 5，',
                                     '训练方式与学习率阶段的两类模型均设为 100 维，窗口大小为 5，', 1)

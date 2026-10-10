@@ -29,7 +29,7 @@ NAMES = {'tfidf': 'TF-IDF', 'word2vec': 'Word2Vec', 'fasttext': 'Gensim FastText
 COLORS = ['#0072B2', '#D55E00', '#009E73']
 MARKERS = ['o', 's', '^']
 FIGURES = ['performance', 'validation', 'topic_f1', 'confusion', 'solver_accuracy']
-REPORTS = [ROOT/'reports/Gensim&FastText.md', ROOT/'reports/Gensim&FastText-去AI味版.md']
+REPORTS = [ROOT/'reports/Gensim&FastText.md', ROOT/'reports/Gensim&FastText-修改版.md']
 HEADING = '#### 1.2.6 三种冻结表示与同一 LinearSVC 的比较'
 
 

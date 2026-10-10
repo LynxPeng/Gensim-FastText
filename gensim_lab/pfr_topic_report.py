@@ -26,7 +26,7 @@ from .pfr_topics import BASE,load_jsonl
 NAMES={'native_scratch':'随机初始化','native_pretrained':'Gensim FastText 初始化'}
 COLORS=['#0072B2','#D55E00']
 FIGURES=['distribution','validation','performance','topic_f1','confusion']
-REPORTS=[ROOT/'reports/Gensim&FastText-去AI味版.md',ROOT/'reports/Gensim&FastText.md']
+REPORTS=[ROOT/'reports/Gensim&FastText-修改版.md',ROOT/'reports/Gensim&FastText.md']
 
 
 def load():

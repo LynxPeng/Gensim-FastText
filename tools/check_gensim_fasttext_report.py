@@ -4,7 +4,7 @@ import re
 from collections import Counter
 
 root = Path(__file__).resolve().parents[1]
-source_path = root / 'reports/Gensim&FastText-去AI味版.md'
+source_path = root / 'reports/Gensim&FastText-修改版.md'
 target_path = root / 'reports/Gensim&FastText-终稿.md'
 appendix_path = root / 'reports/Gensim&FastText-附录.md'
 source = source_path.read_text(encoding='utf-8-sig')
@@ -117,7 +117,7 @@ counts = [
     ('无监督表示', len(region(source, '### 1.1 ', '### 1.2 ')), len(region(target, '### 1.1 ', '### 1.2 '))),
     ('八类主题分类', len(region(source, '### 1.2 ', '## part2 ')), len(region(target, '### 1.2 ', '## 2 '))),
     ('模型原理', len(region(source, '## part2 ', '## part3 ')), len(region(target, '## 2 ', '## 3 '))),
-    ('实现分析', len(source.split('## part3 ', 1)[1]), len(region(main, '## 3 ', '## 附录\n'))),
+    ('实现分析', len(source.split('## part3 ', 1)[1]), len(region(main, '## 3 ', '## 4 '))),
 ]
 
 notes = '''# Gensim 与 FastText 终稿润色说明
@@ -133,6 +133,8 @@ notes = '''# Gensim 与 FastText 终稿润色说明
 - 第三部分恢复 13 段关键源码，按对应机制就近展示，保留固定版本文件名与行号，不再另设源码附录。
 - 增加摘要，交代表示学习、参数搜索、主题分类及源码分析的范围，保留自动标签与性能排序的不确定性。
 - 附录 A–D 拆为独立 Markdown，正文与附录互相链接；另列数据来源、固定版本工具和 GitHub 公开仓库。
+- 按作者当前终稿追加第 4 章，说明小规模选参的全量外推限制、未充分验证的参数及其交互，以及不同类别数量的实验缺口。
+- 两份编辑稿统一命名为“修改版”，同步更新引用与处理入口；生成脚本默认保护已有终稿，显式传入 `--overwrite` 才会重建。
 - 统一图表编号，以短图像替代文本配一条可见图注；不改动图像文件、原有表格数值或源码片段。
 - 删除请求费用、调用预算、测试日志条目及反复提示读者查看本地记录的措辞；压缩讲义式定义、重复总结和过长案例。
 
@@ -193,11 +195,12 @@ notes += f'''
 
 ## 生成与核验入口
 
-在项目根目录使用 Gensim 环境运行以下命令。生成脚本读取去 AI 味原稿，输出正文与独立附录；核验脚本检查标题、图像依赖、数值及源码一致性，并更新本文档。
+在项目根目录使用 Gensim 环境运行以下命令。核验脚本检查当前终稿与附录的标题、图像依赖、数值及源码一致性，并更新本文档。终稿已有作者手工修改，生成脚本默认拒绝覆盖；确需从修改版原稿重建时，显式使用 `--overwrite`，此操作会替换现有终稿与附录。
 
 ```powershell
-conda run -n Gensim python tools/build_gensim_fasttext_report.py
 conda run -n Gensim python tools/check_gensim_fasttext_report.py
+# 仅在明确需要重建时运行
+conda run -n Gensim python tools/build_gensim_fasttext_report.py --overwrite
 ```
 '''
 (root / 'docs/Gensim_FastText报告修订说明.md').write_text(notes, encoding='utf-8', newline='\n')

@@ -29,7 +29,7 @@ NAMES = {'tfidf': 'TF-IDF', 'word2vec': 'Word2Vec', 'fasttext': 'Gensim FastText
          'native_scratch': '原生 FastText：随机初始化', 'native_pretrained': '原生 FastText：预训练初始化'}
 COLORS = ['#0072B2', '#E69F00', '#009E73']
 FIGURES = ['performance', 'page_f1', 'confusion', 'future', 'softmax_validation']
-REPORTS = [ROOT / 'reports/Gensim&FastText-去AI味版.md', ROOT / 'reports/Gensim&FastText.md']
+REPORTS = [ROOT / 'reports/Gensim&FastText-修改版.md', ROOT / 'reports/Gensim&FastText.md']
 
 
 def load():

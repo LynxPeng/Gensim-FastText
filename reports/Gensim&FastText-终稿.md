@@ -6,7 +6,23 @@
 
 主题分类使用人民日报 1998 年一月至三月语料，比较原生 FastText 的随机初始化与预训练初始化，以及三种冻结表示接入同一 LinearSVC 的效果。冻结表示实验中，TF-IDF、Word2Vec 和 FastText 的测试 Macro-F1 分别为 80.15%、78.60% 和 78.01%；原生 FastText 的预训练路线在较低训练预算下获得更高的验证分数。两类实验的配对差值区间均包含零，且主题标签由模型自动生成、未经独立人工核验，结果尚不足以确认稳定的性能排序。
 
-实现分析依据两篇 FastText 论文和 Gensim 4.4.0、原生 fastText 0.9.2 的固定版本源码，围绕字符子词、哈希桶、训练目标、负例采样、更新尺度及并行训练等十项机制展开，保留 13 段关键代码。实验与实现共同说明：子词机制扩大了词表外表示的覆盖，但词向量基准的表现、向量可生成性与主题分类效果需要分别验证；方法选择还应结合监督更新方式与资源成本。
+实现分析依据两篇 FastText 论文和 Gensim 4.4.0、原生 fastText 0.9.2 的固定版本源码，围绕字符子词、哈希桶、训练目标、负例采样、更新尺度及并行训练等十项机制展开。实验与实现共同说明：子词机制扩大了词表外表示的覆盖，但词向量基准的表现、向量可生成性与主题分类效果需要分别验证；方法选择还应结合监督更新方式与资源成本。
+
+## 数据、工具与项目代码
+
+项目代码与复现说明见 [GitHub 公开仓库](https://github.com/LynxPeng/Gensim-FastText)。逐种子数值、辅助曲线及完整分类指标见 [独立附录](Gensim&FastText-附录.md)。正文保留主要比较和实现代码，附录按 A–D 编排。
+
+### 数据来源
+
+- THUCNews 新闻语料：[清华大学 THUCTC 项目说明](https://github.com/thunlp/THUCTC#中文文本分类数据集thucnews)，[语料压缩包](https://thunlp.oss-cn-qingdao.aliyuncs.com/THUCNews.zip)。本文的文章数量以实际读取和清洗结果为准。
+- 人民日报标注语料：[北京大学开放研究数据平台的官方资源入口](https://opendata.pku.edu.cn/dataset.xhtml?persistentId=doi%3A10.18170%2FDVN%2FSEYRX5)。本文使用 1998 年一月至三月的分词与词性标注文本；该入口提供资源说明及申请条件，复现时应核对语料版本。本文八类主题标签来自另行执行的自动标注。
+- 中文词相似度与类比基准：[CWE 数据与说明](https://github.com/Leonard-Xu/CWE/tree/bc55e88a4be9480d585f009e36ce169ec041ae15/data)，[Chinese-Word-Vectors 测试集](https://github.com/Embedding/Chinese-Word-Vectors/tree/3096a475f79f218dde7b413dcc6b507d302b7f46/testsets)。评价使用固定版本的 WordSim240、WordSim297 和中文类比题组。
+
+### 工具与版本
+
+- 无监督表示与实现阅读：[Gensim 4.4.0 源码](https://github.com/piskvorky/gensim/tree/4.4.0)。
+- 原生文本分类：[fastText 0.9.2 源码](https://github.com/facebookresearch/fastText/tree/v0.9.2)；Windows Python 接口采用 [fasttext-wheel 0.9.2 分发包](https://pypi.org/project/fasttext-wheel/0.9.2/)。
+- 中文分词：[jieba](https://github.com/fxsjy/jieba)，本项目使用 0.42.1；冻结表示分类采用 [scikit-learn LinearSVC](https://scikit-learn.org/stable/modules/generated/sklearn.svm.LinearSVC.html)，具体依赖版本见仓库中的锁定文件。
 
 ## 引言
 
@@ -812,6 +828,20 @@ for i, _ in enumerate(self.index_to_key):
 
 源码分析表明，Gensim 在字符共享和高效向量访问之外，还提供了多种预测方式、输出目标和输入接口。各分支的尺度与更新规则并不完全一致，实验差异应按实际配置解释。已有源码和微型探针支持这些实现差异，其对全量耗时、词语关系和分类指标的独立贡献尚需消融。结合第 1 节结果，模型的表示覆盖、内在评价与下游分类应分别报告，单一指标不足以概括整个表示方案的适用性。
 
+## 4 当前研究的缺陷与不足
+
+### 4.1 小规模参数搜索的全量适用性尚未验证
+
+训练方式、初始学习率和向量维数的搜索均在固定的 50,000 篇 THUCNews 子集上完成，全量阶段沿用子集选定的配置，未重新比较各候选维数。扩大语料后，词表规模、低频词覆盖和上下文共现的统计条件都会变化，模型对表示容量的需求也可能随之改变。因此，Word2Vec 的 300 维与 FastText 的 100 维是当前子集搜索得到的候选，尚不能视为全量语料上的最优维数。已有全量重训说明了这些配置的实际表现，但未解决维数选择能否随数据规模迁移的问题。后续可在多档训练规模上重复同一维数比较，保持验证题组与选参规则一致，检验性能与资源成本的变化。
+
+### 4.2 参数覆盖与交互作用的验证仍不充分
+
+现有搜索主要覆盖训练方式、初始学习率和向量维数。上下文窗口、最低词频、高频词下采样阈值、字符子词长度和哈希桶容量等，在当前选参协议中采用固定设置，尚未系统比较其对结果的影响。三个搜索阶段依次固定前一阶段的选择，也未检验训练方式、学习率与维数的完整交互；单独改变某个参数得到的较优值，在其他参数组合下可能不再适用。源码分析解释了若干参数和更新规则的作用，但其对全量性能的独立贡献仍需实验验证。后续可优先比较窗口与子词设置，并围绕已选配置检验学习率和维数的交互，进一步界定当前结果对参数设置的依赖。
+
+### 4.3 不同文本类别数量下的表现尚未比较
+
+当前主题分类固定采用八类主题，未将文本类别数量作为实验变量，也未在统一条件下比较类别较少和类别较多时的模型表现。类别数量及划分粒度变化，可能同时改变类别间的可区分性、每类样本量和训练难度。因此，本文关于三种表示与预训练初始化的比较，适用范围仍限于当前八类划分，不能直接推广到其他类别数量的任务。后续可设置不同类别数量的分类任务，同时报告并控制每类样本量、类别分布和划分粒度，以区分类别数量与数据条件变化的影响。
+
 ## 附录
 
 补充结果见 [Gensim 与 FastText 附录](Gensim&FastText-附录.md)，包含附录 A–D。
@@ -823,21 +853,3 @@ for i, _ in enumerate(self.index_to_key):
 [2] Bojanowski 等. *Enriching Word Vectors with Subword Information*.
 
 实现分析依据 Gensim 4.4.0 与原生 fastText 0.9.2 的固定版本源码。
-
-## 数据、工具与项目代码
-
-项目代码与复现说明见 [GitHub 公开仓库](https://github.com/LynxPeng/Gensim-FastText)。逐种子数值、辅助曲线及完整分类指标见 [独立附录](Gensim&FastText-附录.md)。正文保留主要比较和实现代码，附录按 A–D 编排。
-
-### 数据来源
-
-- THUCNews 新闻语料：[清华大学 THUCTC 项目说明](https://github.com/thunlp/THUCTC#中文文本分类数据集thucnews)，[语料压缩包](https://thunlp.oss-cn-qingdao.aliyuncs.com/THUCNews.zip)。本文的文章数量以实际读取和清洗结果为准。
-- 人民日报标注语料：[北京大学开放研究数据平台的官方资源入口](https://opendata.pku.edu.cn/dataset.xhtml?persistentId=doi%3A10.18170%2FDVN%2FSEYRX5)。本文使用 1998 年一月至三月的分词与词性标注文本；该入口提供资源说明及申请条件，复现时应核对语料版本。本文八类主题标签来自另行执行的自动标注。
-- 中文词相似度与类比基准：[CWE 数据与说明](https://github.com/Leonard-Xu/CWE/tree/bc55e88a4be9480d585f009e36ce169ec041ae15/data)，[Chinese-Word-Vectors 测试集](https://github.com/Embedding/Chinese-Word-Vectors/tree/3096a475f79f218dde7b413dcc6b507d302b7f46/testsets)。评价使用固定版本的 WordSim240、WordSim297 和中文类比题组。
-
-### 工具与版本
-
-- 无监督表示与实现阅读：[Gensim 4.4.0 源码](https://github.com/piskvorky/gensim/tree/4.4.0)。
-- 原生文本分类：[fastText 0.9.2 源码](https://github.com/facebookresearch/fastText/tree/v0.9.2)；Windows Python 接口采用 [fasttext-wheel 0.9.2 分发包](https://pypi.org/project/fasttext-wheel/0.9.2/)。
-- 中文分词：[jieba](https://github.com/fxsjy/jieba)，本项目使用 0.42.1；冻结表示分类采用 [scikit-learn LinearSVC](https://scikit-learn.org/stable/modules/generated/sklearn.svm.LinearSVC.html)，具体依赖版本见仓库中的锁定文件。
-
-公开仓库保留源码、配置、测试、报告及小型图表与评价资源。大型语料、训练模型、运行缓存和编译工具由复现者按上述来源自行准备，依赖安装与实验顺序见仓库 README。

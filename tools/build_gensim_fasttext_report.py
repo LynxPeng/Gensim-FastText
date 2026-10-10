@@ -1,12 +1,18 @@
 from pathlib import Path
+import argparse
 import hashlib
 import re
 
 ROOT = Path(__file__).resolve().parents[1]
-SOURCE = ROOT / 'reports/Gensim&FastText-去AI味版.md'
+SOURCE = ROOT / 'reports/Gensim&FastText-修改版.md'
 TARGET = ROOT / 'reports/Gensim&FastText-终稿.md'
 APPENDIX = ROOT / 'reports/Gensim&FastText-附录.md'
 PROJECT_URL = 'https://github.com/LynxPeng/Gensim-FastText'
+parser = argparse.ArgumentParser(description='Build the report and appendix from the edited source report.')
+parser.add_argument('--overwrite', action='store_true', help='Explicitly replace existing reports, including manual edits.')
+args = parser.parse_args()
+if (TARGET.exists() or APPENDIX.exists()) and not args.overwrite:
+    parser.error('Reports already exist. Preserve manual edits; use --overwrite only to replace them deliberately.')
 source = SOURCE.read_text(encoding='utf-8-sig')
 source_hash = hashlib.sha256(SOURCE.read_bytes()).hexdigest()
 
@@ -734,7 +740,20 @@ resources = f'''## 数据、工具与项目代码
 
 公开仓库保留源码、配置、测试、报告及小型图表与评价资源。大型语料、训练模型、运行缓存和编译工具由复现者按上述来源自行准备，依赖安装与实验顺序见仓库 README。
 '''
-report = (main_body.rstrip() + '\n\n## 附录\n\n'
+limitations = '''## 4 当前研究的缺陷与不足
+
+### 4.1 小规模参数搜索的全量适用性尚未验证
+
+训练方式、初始学习率和向量维数的搜索均在固定的 50,000 篇 THUCNews 子集上完成，全量阶段沿用子集选定的配置，未重新比较各候选维数。扩大语料后，词表规模、低频词覆盖和上下文共现的统计条件都会变化，模型对表示容量的需求也可能随之改变。因此，Word2Vec 的 300 维与 FastText 的 100 维是当前子集搜索得到的候选，尚不能视为全量语料上的最优维数。已有全量重训说明了这些配置的实际表现，但未解决维数选择能否随数据规模迁移的问题。后续可在多档训练规模上重复同一维数比较，保持验证题组与选参规则一致，检验性能与资源成本的变化。
+
+### 4.2 参数覆盖与交互作用的验证仍不充分
+
+现有搜索主要覆盖训练方式、初始学习率和向量维数。上下文窗口、最低词频、高频词下采样阈值、字符子词长度和哈希桶容量等，在当前选参协议中采用固定设置，尚未系统比较其对结果的影响。三个搜索阶段依次固定前一阶段的选择，也未检验训练方式、学习率与维数的完整交互；单独改变某个参数得到的较优值，在其他参数组合下可能不再适用。源码分析解释了若干参数和更新规则的作用，但其对全量性能的独立贡献仍需实验验证。后续可优先比较窗口与子词设置，并围绕已选配置检验学习率和维数的交互，进一步界定当前结果对参数设置的依赖。
+
+### 4.3 不同文本类别数量下的表现尚未比较
+
+当前主题分类固定采用八类主题，未将文本类别数量作为实验变量，也未在统一条件下比较类别较少和类别较多时的模型表现。类别数量及划分粒度变化，可能同时改变类别间的可区分性、每类样本量和训练难度。因此，本文关于三种表示与预训练初始化的比较，适用范围仍限于当前八类划分，不能直接推广到其他类别数量的任务。后续可设置不同类别数量的分类任务，同时报告并控制每类样本量、类别分布和划分粒度，以区分类别数量与数据条件变化的影响。'''
+report = (main_body.rstrip() + '\n\n' + limitations + '\n\n## 附录\n\n'
           '补充结果见 [Gensim 与 FastText 附录](Gensim&FastText-附录.md)，包含附录 A–D。\n\n'
           '## 参考文献' + references.rstrip() + '\n\n' + resources)
 TARGET.write_text(report, encoding='utf-8', newline='\n')

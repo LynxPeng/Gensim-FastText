@@ -21,7 +21,7 @@
 
 | 文档 | 1.1.4 修改前字符数 | 修改后字符数 |
 | --- | ---: | ---: |
-| Gensim&FastText-去AI味版.md | 4718 | 6003 |
+| Gensim&FastText-修改版.md | 4718 | 6003 |
 | Gensim&FastText.md | 4718 | 6003 |
 
 字符数含 Markdown 标记，记录用于追踪本次局部增补。

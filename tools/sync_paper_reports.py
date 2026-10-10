@@ -28,7 +28,7 @@ def main():
         source.write_text(text, encoding='utf-8')
     subprocess.run([sys.executable, '-m', 'gensim_lab.paper_figures', '--stage', 'attach'], cwd=ROOT, check=True)
     subprocess.run([sys.executable, str(ROOT / "tools/build_consolidated_report.py")], cwd=ROOT, check=True)
-    edition = ROOT / "reports/综合研究报告-去AI味版.md"
+    edition = ROOT / "reports/综合研究报告-修改版.md"
     text = edition.read_text(encoding="utf-8")
     text = text.replace('正式随机模型采用三个种子、单线程训练。',
                         '人民日报历史随机模型采用三个种子、单线程训练；当前默认训练 20 线程，历史记录保留原始口径。')

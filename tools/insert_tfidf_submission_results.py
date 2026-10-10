@@ -37,7 +37,7 @@ TF-IDF 在 821,609 篇训练文章上拟合词表与 IDF，最终保留 50,000 �
     edits = []
     backup = QA / 'report_before'
     backup.mkdir(exist_ok=True)
-    for name in ['Gensim&FastText-去AI味版.md', 'Gensim&FastText.md']:
+    for name in ['Gensim&FastText-修改版.md', 'Gensim&FastText.md']:
         path = ROOT / 'reports' / name
         before = path.read_bytes()
         text = before.decode('utf-8')

@@ -67,7 +67,7 @@ def check(experiment):
             expected += f' | {statistics.mean(values):.4f}±{statistics.stdev(values):.4f} |'
             assert expected in body
     paths = [report, ROOT / 'README.md', ROOT / 'docs/THUCNews向量维数搜索方案.md',
-             ROOT / 'reports/Gensim&FastText.md', ROOT / 'reports/Gensim&FastText-去AI味版.md']
+             ROOT / 'reports/Gensim&FastText.md', ROOT / 'reports/Gensim&FastText-修改版.md']
     links = 0
     for path in paths:
         content = path.read_text(encoding='utf-8')

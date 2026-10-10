@@ -86,7 +86,7 @@ def main():
             assets+=1
     assert assets==15
     links={}
-    for path in [ROOT/'reports/Gensim&FastText.md',ROOT/'reports/Gensim&FastText-去AI味版.md',
+    for path in [ROOT/'reports/Gensim&FastText.md',ROOT/'reports/Gensim&FastText-修改版.md',
                  ROOT/'reports/人民日报三种表示LinearSVC对比.md',ROOT/'docs/人民日报主题分类复现指南.md',ROOT/'README.md']:
         links[path.name]=verify_links(path)
         if path.name.startswith('Gensim&FastText'):

@@ -160,7 +160,7 @@ def main():
     for name,digest in read_json(directory/'test_seal.json').items():
         assert file_hash(directory/name)==digest
 
-    paths=[ROOT/'reports/Gensim&FastText.md',ROOT/'reports/Gensim&FastText-去AI味版.md',
+    paths=[ROOT/'reports/Gensim&FastText.md',ROOT/'reports/Gensim&FastText-修改版.md',
            ROOT/'reports/人民日报原生FastText主题分类.md',ROOT/'docs/人民日报主题分类复现指南.md',
            ROOT/'docs/人民日报八类主题分类实施方案.md']
     link_counts={p.name:verify_links(p) for p in paths}
