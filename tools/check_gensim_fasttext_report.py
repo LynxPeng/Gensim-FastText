@@ -2,6 +2,7 @@ from pathlib import Path
 import hashlib
 import re
 from collections import Counter
+from inline_math_text import plain_inline_math
 
 root = Path(__file__).resolve().parents[1]
 source_path = root / 'reports/Gensim&FastText-修改版.md'
@@ -11,6 +12,7 @@ source = source_path.read_text(encoding='utf-8-sig')
 main = target_path.read_text(encoding='utf-8')
 appendix = appendix_path.read_text(encoding='utf-8')
 target = main + '\n' + appendix
+assert plain_inline_math(main)[1] == 0, 'Inline LaTeX remains in the final report.'
 
 source_images = re.findall(r'^!\[.*\]\((.*)\)$', source, re.M)
 target_images = re.findall(r'^!\[.*\]\((.*)\)$', target, re.M)
@@ -135,6 +137,7 @@ notes = '''# Gensim 与 FastText 终稿润色说明
 - 附录 A–D 拆为独立 Markdown，正文与附录互相链接；另列数据来源、固定版本工具和 GitHub 公开仓库。
 - 按作者当前终稿追加第 4 章，说明小规模选参的全量外推限制、未充分验证的参数及其交互，以及不同类别数量的实验缺口。
 - 两份编辑稿统一命名为“修改版”，同步更新引用与处理入口；生成脚本默认保护已有终稿，显式传入 `--overwrite` 才会重建。
+- 终稿的行内 LaTeX 改为普通字母、下划标记和可直接阅读的算式，独立公式块与源码片段保留。
 - 统一图表编号，以短图像替代文本配一条可见图注；不改动图像文件、原有表格数值或源码片段。
 - 删除请求费用、调用预算、测试日志条目及反复提示读者查看本地记录的措辞；压缩讲义式定义、重复总结和过长案例。
 
